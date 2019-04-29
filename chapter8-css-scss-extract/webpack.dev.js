@@ -1,19 +1,14 @@
-const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
+const common = require('./webpack.common');
+const webpack = require('webpack');
 
-module.exports = {
+module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
-  entry: './src/index.js',
   devServer: {
     contentBase: './dist',
     port: 3030,
     hot: true
-  },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -28,7 +23,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: 'myPrefix.[name].[ext]',
-              publicPath: './images',
+              publicPath: '/images',
               outputPath: 'images/'
             }
           }
@@ -37,12 +32,6 @@ module.exports = {
     ]
   },
   plugins: [
-    
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: '首頁',
-      filename: 'index.html',
-      template: './index.html'
-    })
+    new webpack.HotModuleReplacementPlugin(),
   ]
-}
+})
