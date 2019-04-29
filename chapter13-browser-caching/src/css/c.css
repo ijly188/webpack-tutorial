@@ -1,0 +1,13 @@
+.box3 {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+.bg-dessert {
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../images/dessert.jpg);
+}
