@@ -15,21 +15,21 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.js$/,
-      //   exclude: /node_modules/,
-      //   use: {
-      //     loader: 'babel-loader',
-      //     options: {
-      //       presets: ['@babel/preset-env'],
-      //       plugins: [
-      //         '@babel/plugin-transform-runtime',
-      //         "@babel/plugin-syntax-dynamic-import",
-      //         ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }]
-      //       ]
-      //     }
-      //   }
-      // }
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: [
+              '@babel/plugin-transform-runtime',
+              "@babel/plugin-syntax-dynamic-import",
+              ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }]
+            ]
+          }
+        }
+      }
     ]
   },
   plugins: [
