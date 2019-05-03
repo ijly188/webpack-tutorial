@@ -1,0 +1,10 @@
+$color-primary: #000;
+
+p {
+  color: $color-primary;
+  font-size: 1rem;
+}
+
+.box {
+  transition: all 4s ease; 
+}
