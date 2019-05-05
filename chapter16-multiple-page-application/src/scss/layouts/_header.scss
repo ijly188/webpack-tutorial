@@ -1,0 +1,120 @@
+%hamburger-link {
+  width: 14px;
+  height: 3px;
+  background: #fff;
+}
+
+.header {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, .16%);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 90px;
+  position: static !important;
+
+  &__logo-link {
+    color: $menu-link-color;
+    font-size: 1.3rem;
+
+    &:hover {
+      color: $menu-link-color;
+      text-decoration: none !important;
+    }
+  }
+
+  &__hamburger {
+    color: rgba(0, 0, 0, .5);
+    font-size: 1.3rem;
+
+    &:hover, &:focus{
+      color: rgba(0, 0, 0, .9);
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    &__item {
+      
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__menu {
+      display: flex;
+      align-items: center;
+
+      &__item {
+        font-size: 1.25rem;
+        margin-right: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &__link {
+        color: $menu-link-color;
+
+        &:hover, &:active {
+          color: $menu-link-color;
+        }
+      }
+    }
+
+    &__hamburger { 
+      display: none;
+    }
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  width: 275px;
+  padding: 0 2rem;
+  transform: translateX(275px);
+  transition: transform .5s, max-width .5s;
+
+  &__close-box {
+    text-align: right;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    &__icon {
+      font-size: 1.5rem;
+      color: $menu-link-color;
+
+      &:hover, &:focus, &:active {
+        color: $menu-link-color;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      text-align: center;
+
+      &__link {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $menu-link-color;
+
+        &:hover, &:active, &:focus {
+          color: $menu-link-color;
+        }
+      }
+    }
+  }
+}
